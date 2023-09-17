@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- render all element normaly -->
+      <link rel="stylesheet" href="css/normalize.css">
+      <!-- font awessem library -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- work sans font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   
+   <style>
+     *{
+       box-sizing: border-box;
+       font-family: 'Poppins', sans-serif;
+    margin: 0%;
+    padding: 0%;
+     }
+     html{
+        scroll-behavior:smooth
+     }
+     body{
+        background-color: #1f242d;
+       color: azure;
+     }
+     .header{
+       
+       background: transparent;
+       top: 0;
+       left: 0;
+       width: 100%;
+       padding: 20px 10%;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       z-index: 100;
+       
+}
+
+
+.logo{
+    font-size: 25px;
+    color: azure;
+    text-decoration: none;
+     cursor: default;
+     font-weight: 600;
+     opacity: 0;
+     animation: slideRight 1s  ease forwards;
+      
+}
+nav a{
+    display: inline-block;
+  font-size: 18px;
+  color: azure;
+  text-decoration: none;
+  font-weight: 6 00; 
+  margin-left: 35px;
+ transition: all 0.3s;
+ opacity: 0;
+     animation: slideTop .5s  ease forwards;
+     animation-delay: calc(.2s*var(--i));
+      
+}
+nav a:hover,nav a.active {
+    color: rgb(40, 158, 255);
+    border-bottom: 4px dashed rgb(40, 158, 255);
+    border-top: 4px dashed rgb(40, 158, 255);
+}
+.home{
+position: relative;
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 70px 10% 0;
+}
+.home-img img {
+    max-width: 400px;
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgb(0, 138, 252);
+    margin-right: -30px;
+    opacity: 0;
+     animation: zoomIn 1s  ease forwards, floatImage 4s;
+    
+     animation-delay: 1s,3s,2s;
+}
+.home-content{
+    max-width: 600px;
+}
+.home-content h3{
+    font-size: 32px;
+    font-weight:  bolder;
+    opacity: 0;
+     animation: slideBottom .7s  ease forwards;
+     
+}
+.home-content h3 span{
+    color: rgb(40, 158, 255);
+}
+.home-content h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: rgb(0, 138, 252);
+    margin: -3 0;
+    opacity: 0;
+     animation: slideRight 1s  ease forwards;
+
+}
+.home-content h3:nth-of-type(2){
+ margin-bottom: 30px;
+
+ opacity: 0;
+     animation: slideTop .7s  ease forwards;
+     
+}
+.home-content p {
+    font-size: 16px;
+    opacity: 0;
+     animation: slideLeft 1s  ease forwards;
+
+}
+.social-media a i {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px  solid rgb(40, 158, 255);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color:  rgb(40, 158, 255);
+    text-decoration: none;
+    margin: 30px 15px 30px 0 ;
+    transition: all 0.5s;
+    opacity: 0;
+     animation: slideLeft 1s  ease forwards;
+     animation-delay: calc(.1s*var(--i));
+
+}
+.social-media a :hover {
+background: rgb(40, 158, 255);
+color: #1f242d;
+box-shadow: 0 0 40px rgb(0, 138, 252);
+}
+.home-content .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: rgb(0, 138, 252);
+border-radius: 40px;
+box-shadow: 0 0 10px rgb(0, 138, 252);
+font-size: 16px;
+text-decoration: none;
+color: #1f242d;
+letter-spacing: 1px;
+font-weight: 600;
+opacity: 0;
+     animation: slideLeft 1s  ease forwards;
+     animation-delay: 2s;
+
+}
+/* KEYFRAMES ANIMATION */
+@keyframes slideRight {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+@keyframes slideTop {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+@keyframes slideBottom {
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+@keyframes slideLeft {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+@keyframes zoomIn {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(1);
+        opacity: 1;
+    }
+
+}
+@keyframes floatImage {
+    0%{
+ transform:translateY(0);
+    }
+   50%{
+ transform:translateY(-24px);
+    }
+   100%{
+ transform:translateY(0);
+    }
+  }
+
+  @media(max-width:797px){
+    nav a:hover,nav a.active {
+    color: rgb(40, 158, 255);
+    border: none;
+    
+}
+    .skills,.about{
+        max-width: 350px;
+        max-height: fit-content;
+       padding: 5px;
+    }
+   
+    .header{
+        position: relative;
+       background: transparent;
+       top: 0;
+       left: 0;
+       width: 100%;
+       padding: 20px 10%;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+      margin-bottom: 90px;
+}
+.header nav{
+  
+    display: flex;
+    position: absolute;
+   gap: 0px;
+   bottom: -40px;
+visibility: hidden;
+transition: all  0.3s;
+
+
+}
+.header .ham {
+    width: 40px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    right: 0;
+    margin-right: 40px;
+   
+}
+.header .ham span{
+   background-color: aliceblue;
+   width: 30px;
+    height: 4px;
+
+}
+
+     .home{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        justify-content: space-around;
+        padding: 30px;
+        margin-top: 70px;
+        margin-bottom: 50px;
+
+     }
+     .home-img img {
+    display: none;
+   
+}
+.header .ham:hover+ nav{
+    transform: translateY(10px);
+  visibility: visible;
+ 
+}
+
+
+nav a{
+   
+  font-size: 15px;
+  color: azure;
+  text-decoration: none;
+  font-weight: 700; 
+  margin-left: 14px;
+ transition: all 0.3s;
+ color:  rgb(0, 138, 252);;
+ opacity: 0;
+     animation: slideTop .5s  ease forwards;
+     animation-delay: calc(.2s*var(--i));
+      
+}
+
+    
+  }
+
+
+  .skills,.about{
+    width: 600px;
+    margin: 80px auto 20px;
+    height: fit-content;
+    padding: 5px 10px;
+    border: 3px solid azure;
+    border-radius: 4px;
+    box-shadow: 2px 0px 12px; 
+  }
+
+  .skills h2,.about h2{
+    font-weight: 800;
+    font-size: 25px;
+    color: azure; 
+     text-align: center;
+  }
+  .skills .container-ofskills, .about .container-ofskills{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  .skills .container-ofskills span {
+  height: fit-content;
+ min-width: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+ height: 20px;
+ font-size: 15px;
+ color: azure;
+  font-weight:700;
+  margin: 10px;
+  }
+  .skills .container-ofskills span .spanv {
+        
+       border: 2px solid azure;
+       background-color:rgb(0, 138, 252);
+      margin:0 10px;
+      padding:  4px 0px;
+      text-align: center;
+      border-radius: 3px;
+      box-shadow: 2px 0px 12px rgb(0, 138, 252); 
+  }
+
+
+
+
+  a{
+    text-decoration: none;
+}
+
+
+
+
+
+     </style>
+    <title>Portfolio</title>
+</head>
+<body>
+    <header class="header">
+    <a href="#" class="logo">Portfolio.</a>
+    <div class="ham">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav>
+           <a href="#" style="--i:1;" class="active">Home</a>
+            <a href="#about"style="--i:2;">About</a>
+            <a href="#SKILS"style="--i:3;">Skills</a>
+            <a href="#"style="--i:4;">Portfolio</a>
+            <a href="#"style="--i:5;">Contact</a>
+        </nav>
+</header>
+<section class="home">
+<div class="home-content">
+    <h3> Hello, it's me </h3>
+    <h1> Fares Samer</h1>
+    <h3>And I'm a <span class="multiple-text">Fullstack Developer</span> </h3>
+    <p>I'm Samer Faris, 20 years old, and a student majoring in Computer Science Engineering. I am a professional web developer with expertise in designing and developing websites using various technologies. Additionally, I am a skilled video producer, proficient in using software like Adobe Premiere Pro and After Effects to enhance video quality and add creative visual effects.</p>
+<div class="social-media">
+    <a href="https://web.facebook.com/fares.samer.972" style="--i:6;"><i class='bx bxl-facebook'></i></a>
+    <a href="https://www.instagram.com/fares_sa_mer/" style="--i:8;"><i class='bx bxl-instagram-alt'></i> </a>
+    <a href="https://www.linkedin.com/in/fares-samer-a9bb88267/" style="--i:9;"><i class='bx bxl-linkedin'></i></a>
+    <a href="#" style="--i:7;"><i class='bx bxl-twitter'></i></a>
+</div>
+<a href="#" class="btn">Download CV</a>
+</div>
+<div class="home-img">
+    <img src="image_viber_2023-04-08_17-38-41-731.jpg" alt="">
+
+</div>
+</section>
+<div class="skills">
+    <h2>Skills</h2>
+    <div class="container-ofskills" id="SKILS">
+        <span>HTML5 <div class="spanv" style="width: 80%;">80%</div></span>
+        <span> CSS3  <div class="spanv" style="width: 80%;">80%</div> </span>
+        <span> JAVA-S   <div class="spanv" style="width: 79%;">79%</div></span>
+        <span> JAVA  <div class="spanv" style="width: 40%;">40%</div></span>
+        <span> REACT JS<div class="spanv" style="width: 40%;">40%</div></span>
+    </div>
+</div>
+
+<div class="about">
+    <h2>About</h2>
+    <div class="container-ofskills" id="about">
+        <p>Hello, I'm Samer Faris, a 20-year-old currently pursuing a degree in Computer Science Engineering. I embarked on my journey into the world of technology and web development quite some time ago, and over the years, I've grown to become a proficient professional in this field. I possess extensive experience in designing and developing websites using various technologies, such as HTML, CSS, and JavaScript. I've crafted diverse websites, ranging from personal portfolios to business and interactive platforms, and I'm always eager to stay updated with the latest trends and advancements in web development.
+
+            In addition to my web development skills, I'm also a skilled video producer. I've created a wide array of videos, from educational and informative content to promotional and advertising videos. I utilize software like Adobe Premiere Pro and Adobe After Effects to enhance video quality and add creative visual effects.
+            
+            I'm constantly striving to improve and expand my skills in the realms of technology and creativity. I'm dedicated to delivering top-notch technical solutions and producing engaging content for my clients and audience. I can share my previous works and projects to showcase my abilities and achievements in this field</p>
+        </div>
+</div>
+
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed(".multiple-text", {
+ strings:["Fullstack Developer", "CS Student", "Video Editor"],
+        typeSpeed: 100,
+        backSpeed:100,
+        backDelay:1000,
+        loop:true }
+       ) ;
+        </script>
+</body>
+</html>
